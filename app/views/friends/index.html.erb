@@ -4,18 +4,12 @@
     <thead>
       <tr>
         <th scope="col">Name</th>
-        <th scope="col">Email</th>
-        <th scope="col">Phone</th>
-        <th scope="col">Twitter</th>
       </tr>
     </thead>
     <tbody>
       <% @friends.each do |friend| %>
         <tr>
           <td><%= link_to friend.first_name + " " + friend.last_name, friend, class:"btn btn-link" %></td>
-          <td><%= friend.email %></td>
-          <td><%= friend.phone %></td>
-          <td><%= friend.twitter %></td>
         </tr>
       <% end %>
     </tbody>
