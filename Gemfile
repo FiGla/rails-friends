@@ -57,6 +57,7 @@ group :development, :test do
   gem 'brakeman'
   gem 'bundler-audit'
   gem 'rubocop'
+  gem 'rubocop-discourse'
 end
 
 group :development do

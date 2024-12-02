@@ -1,6 +1,7 @@
 AllCops:
+  SuggestExtensions: false
   Exclude:
-    - bin/**
+    - bin/**/*
 Style/Documentation:
   Enabled: false
 Layout/LineLength:
