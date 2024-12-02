@@ -57,6 +57,7 @@ group :development, :test do
   # gem "sqlite3", "~> 1.4"
   gem 'brakeman'
   gem 'bundler-audit'
+  gem 'pry'
   gem 'rubocop'
   gem 'rubocop-discourse'
 end
