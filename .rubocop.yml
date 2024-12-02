@@ -1,8 +1,11 @@
 AllCops:
-  NewCops: disable
+  NewCops: enable
   SuggestExtensions: false
   Exclude:
     - bin/**/*
+    - node_modules/**/*
+    - public/**/*
+    - vendor/**/*
 Style/Documentation:
   Enabled: false
 Layout/LineLength:
