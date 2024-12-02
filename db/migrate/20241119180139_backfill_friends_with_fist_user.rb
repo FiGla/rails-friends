@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BackfillFriendsWithFistUser < ActiveRecord::Migration[7.0]
   class MigrationFriend < ActiveRecord::Base
     self.table_name = :friends
