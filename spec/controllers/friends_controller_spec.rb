@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe FriendsController do
+RSpec.describe FriendsController, type: :controller do
   let(:user) { User.create(email: 'example@example.com', password: '123456') }
   let(:valid_attributes) do
     {

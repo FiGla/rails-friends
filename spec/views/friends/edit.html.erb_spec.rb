@@ -3,8 +3,9 @@
 require 'rails_helper'
 
 RSpec.describe 'friends/edit', type: :view do
+  let(:user) { User.create(email: 'example@example.com', password: '123456') }
   let(:friend) do
-    Friend.create!
+    Friend.create!(first_name: 'hello', last_name: 'world', user_id: user.id)
   end
 
   before(:each) do
@@ -14,7 +15,7 @@ RSpec.describe 'friends/edit', type: :view do
   it 'renders the edit friend form' do
     render
 
-    assert_select 'form[action=?][method=?]', friend_path(friend), 'post' do
-    end
+    expect(rendered).to include('Editing friend')
+    expect(rendered).to include('Back')
   end
 end

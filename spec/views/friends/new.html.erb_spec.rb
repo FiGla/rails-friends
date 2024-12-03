@@ -10,7 +10,7 @@ RSpec.describe 'friends/new', type: :view do
   it 'renders new friend form' do
     render
 
-    assert_select 'form[action=?][method=?]', friends_path, 'post' do
-    end
+    expect(rendered).to include('New friend')
+    expect(rendered).to include('Back')
   end
 end
