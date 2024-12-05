@@ -1,0 +1,3 @@
+<h1> <%= @user.name || @user.email %>! </h1>
+<p> <%= @friend.name%> is turning <%= distance_of_time_in_words(Time.now, @friend.birthday, false, only: :years) %> 
+    on <%= @friend.birthday.change(year: Time.now.year).strftime('%B %e, %Y')%></p>
