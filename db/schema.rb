@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_241_126_113_718) do
+ActiveRecord::Schema[7.0].define(version: 20_241_203_232_633) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -23,8 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 20_241_126_113_718) do
     t.datetime 'updated_at', null: false
     t.integer 'user_id'
     t.date 'birthday'
-    t.index %w[first_name last_name user_id], name: 'index_friends_on_first_name_and_last_name_and_user_id',
-                                              unique: true
+    t.index %w[first_name last_name user_id], name: 'index_friends_on_first_name_and_last_name_and_user_id', unique: true
     t.index ['user_id'], name: 'index_friends_on_user_id'
   end
 
@@ -36,6 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 20_241_126_113_718) do
     t.datetime 'remember_created_at'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
+    t.string 'name'
     t.index ['email'], name: 'index_users_on_email', unique: true
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
