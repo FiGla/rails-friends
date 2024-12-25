@@ -49,6 +49,10 @@ gem 'bootsnap', require: false
 gem 'devise', '~> 4.9', '>= 4.9.4'
 gem 'dotiw'
 gem 'pg', '~> 1.5', '>= 1.5.9'
+gem 'aws-sdk-sns', '~> 1'
+gem 'whenever', require: false
+gem 'dotenv-rails', groups: [:development, :test]
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
