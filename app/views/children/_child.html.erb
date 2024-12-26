@@ -1,0 +1,9 @@
+<div class="d-flex gap-2 py-1" id="<%= dom_id child %>">
+  <%= child.name %> | <%= child.date_of_birth %> | <%= child.age %> years old |
+  <%= link_to "Edit", edit_friend_child_path(child.friend, child), 
+    class:"btn btn-success btn-sm"%> | 
+  <%= button_to "Destroy", 
+    friend_child_path(child.friend, child), method: :delete, 
+    class:"btn btn-outline-danger btn-sm" %>
+</div>
+

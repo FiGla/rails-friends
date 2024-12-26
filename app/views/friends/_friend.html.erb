@@ -1,14 +1,17 @@
 
  <div class="p-5 mb-4 bg-body-tertiary rounded-3"  id="<%= dom_id friend %>">
-  <div class="container-fluid py-3">
+  <div class="">
     <h1 class="display-5 fw-bold"> <%= friend.first_name %> <%= friend.last_name %></h1>
     <p class="col-md-8 fs-4"> <%= friend.birthday %> </p>
   </div>
 
-  <div>
-    <%= link_to "Edit", edit_friend_path(@friend), class:"btn btn-success" %> 
-    <%= link_to "Back", friends_path , class:"btn btn-secondary"%> 
-    <br /><br />
-    <%= button_to "Destroy", @friend, method: :delete,  class:"btn btn-outline-danger"%>
+  <div class="d-flex gap-2 py-1">
+    <%= link_to "Edit", edit_friend_path(@friend), class:"btn btn-success btn-sm" %> 
+    <%= link_to "Back", friends_path , class:"btn btn-secondary btn-sm"%> 
+    <%= button_to "Destroy", @friend, method: :delete, class:"btn btn-outline-danger btn-sm"%>
+  </div>
+
+  <div class="container-fluid py-3">
+    <%= render 'children/index', friend: @friend %>
   </div>
 </div>
