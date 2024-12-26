@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ChildrenController < ApplicationController
-  before_action :set_child, only: %i[ show edit update destroy ]
+  before_action :set_child, only: %i[show edit update destroy]
 
   # GET /children/new
   def new
@@ -21,7 +23,7 @@ class ChildrenController < ApplicationController
 
     respond_to do |format|
       if @child.save
-        format.html { redirect_to friend_path(@friend), notice: "Child was successfully created." }
+        format.html { redirect_to friend_path(@friend), notice: 'Child was successfully created.' }
         format.json { render :show, status: :created, location: @child }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -35,7 +37,7 @@ class ChildrenController < ApplicationController
     @friend = @child.friend
     respond_to do |format|
       if @child.update(child_params)
-        format.html { redirect_to friend_path(@friend), notice: "Child was successfully updated." }
+        format.html { redirect_to friend_path(@friend), notice: 'Child was successfully updated.' }
         format.json { render :show, status: :ok, location: @child }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -50,19 +52,20 @@ class ChildrenController < ApplicationController
     @child.destroy
 
     respond_to do |format|
-      format.html { redirect_to friend_path(@friend), status: :see_other, notice: "Child was successfully destroyed." }
+      format.html { redirect_to friend_path(@friend), status: :see_other, notice: 'Child was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_child
-      @child = Child.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def child_params
-      params.require(:child).permit(:name, :date_of_birth)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_child
+    @child = Child.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def child_params
+    params.require(:child).permit(:name, :date_of_birth)
+  end
 end

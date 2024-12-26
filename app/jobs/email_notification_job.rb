@@ -11,5 +11,9 @@ class EmailNotificationJob < ApplicationJob
     Friend.where('extract(month from birthday) = ? AND extract(day from birthday) = ?', (Date.today + 7.days).month, (Date.today + 7.days).day).each do |friend|
       BirthdayNotificationMailer.reminder_birthday_notification_email(friend).deliver_later
     end
+
+    Child.where('extract(month from birthday) = ? AND extract(day from birthday) = ?', Date.today.month, Date.today.day).each do |child|
+      BirthdayNotificationMailer.child_birthday_notification_email(child).deliver_later
+    end
   end
 end
