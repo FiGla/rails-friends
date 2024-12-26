@@ -1,0 +1,11 @@
+<h1>Children</h1>
+
+<div id="children">
+  <% if @friend.children%>
+    <% @friend.children.each do |child| %>
+      <%= render child %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= link_to "Add new child", new_friend_child_path(@friend.id), class:"btn btn-success" %>

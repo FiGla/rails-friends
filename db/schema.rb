@@ -12,9 +12,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_241_203_232_633) do
+ActiveRecord::Schema[7.0].define(version: 20_241_225_223_443) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
+
+  create_table 'children', force: :cascade do |t|
+    t.string 'name'
+    t.date 'date_of_birth'
+    t.integer 'friend_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['friend_id'], name: 'index_children_on_friend_id'
+  end
 
   create_table 'friends', force: :cascade do |t|
     t.string 'first_name'
