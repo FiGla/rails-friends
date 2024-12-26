@@ -16,4 +16,7 @@
   </table>
 <% end %>
 
-<%= link_to "Add new friend", new_friend_path, class:"btn btn-success" %>
+<div class="d-flex gap-2" >
+  <%= link_to "Add new friend", new_friend_path, class:"btn btn-success btn-sm" %>
+  <%= button_to "Send emails", send_birthday_emails_path, method: :post, class:"btn btn-outline-success btn-sm"%>
+</div>
