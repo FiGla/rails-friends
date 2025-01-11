@@ -22,5 +22,9 @@
 # Learn more: http://github.com/javan/whenever
 
 every 1.day, at: '9:00 am' do
-  runner 'EmailNotificationJob.perform_later'
+  runner 'EmailNotificationJob.perform_now'
+end
+
+every 10.minutes do
+  runner 'EmailNotificationJob.perform_now'
 end
