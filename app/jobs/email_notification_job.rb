@@ -1,8 +1,6 @@
 # frozen_string_literal: true
 
 class EmailNotificationJob < ApplicationJob
-  default from: 'no-reply@rails-friends.com'
-
   queue_as :default
 
   def perform
