@@ -1,2 +1,2 @@
 web: bundle exec puma -C config/puma.rb
-schedule: bundle exec whenever --update-crontab
+worker: bundle exec rake email_notifications:birthday_reminder
